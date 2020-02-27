@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 <h2>Books</h2>
 
 <table>
@@ -23,6 +29,13 @@
   </tbody>
   <%end%>
   </table>
+
+ <% if @book.errors.any? %>
+ <% @book.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+<% end %>
+  
+<% end %>
 
 <h3>New book</h3>
 <%= form_for(@book) do |f| %>

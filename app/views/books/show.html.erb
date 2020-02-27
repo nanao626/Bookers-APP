@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 <table>
     <tbody>
      <tr>
@@ -13,4 +19,4 @@
 
 <%= link_to "Edit", edit_book_path(@book) %>
 |
-<%= link_to "Back", books_path(@book) %>
+<%= link_to "Back", books_path %>
